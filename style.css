@@ -1,0 +1,61 @@
+/* This rule applies to all elements on the page */
+* {
+    /* Set the height of the viewport to 100% of the browser window's height */
+    height: 100vh;
+    /* Set the background color to black */
+    background: black;
+    /* Prevent any content from overflowing out of the viewport */
+    overflow: hidden;
+    /* Remove any default margin and padding */
+    margin: 0;
+    padding: 0;
+    /* Ensure that padding and borders are included in the element's total width and height */
+    box-sizing: border-box;
+}
+
+/* Styles for the <span> element */
+span {
+    /* Set the background image for the span element */
+    background: url("https://cdn0.iconfinder.com/data/icons/remoji-soft-1/256/emoji-zombie-brains-drool.png");
+    /* Set the height of the span element to 100px */
+    height: 100px;
+    /* Set the width of the span element to 100px */
+    width: 100px;
+    /* Position the span element absolutely within its nearest positioned ancestor */
+    position: absolute;
+    /* Ensure the background image covers the entire span without repeating */
+    background-size: cover;
+    /* Center the element by moving it up and left by 50% of its own width and height */
+    transform: translate(-50%, -50%);
+    /* Set the element's left position to 50% of its parent element's width (center horizontally) */
+    left: 50%;
+    /* Set the element's top position to 50% of its parent element's height (center vertically) */
+    top: 50%;
+    /* Disable pointer events, making the element invisible to mouse clicks */
+    pointer-events: none;
+    /* Apply the 'sausage' animation over 6 seconds in a linear fashion */
+    animation: sausage 6s linear;
+}
+
+/* Define the 'sausage' keyframes animation */
+@keyframes sausage {
+    /* Initial state (0%): Element is centered, nearly opaque, and has no color shift */
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 0.9;
+        filter: hue-rotate(0deg);
+    } 
+    /* At 25% of the animation: Element's colors shift by 90 degrees */
+    25% {
+        filter: hue-rotate(90deg);
+    }
+    /* At 50% of the animation: Element's colors shift by 180 degrees (complementary colors) */
+    50% {
+        filter: hue-rotate(180deg);
+    } 
+    /* Final state (100%): Element is far off-screen vertically, with colors shifted by 360 degrees */
+    100% {
+        transform: translate(-50%, -5000%);
+        filter: hue-rotate(360deg);
+    }
+}
